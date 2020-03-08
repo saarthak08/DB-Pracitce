@@ -9,6 +9,8 @@
 	
 	*/
 
+show warnings; --shows warnings
+
 show databases;   -- show the list of databases
 
 create database test;  -- creates a database names test
