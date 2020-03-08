@@ -25,3 +25,21 @@ use test; -- using the database i.e. current database is selected.
 
 select database(); --return current selected database
 
+
+create table tweets (
+	username varchar(200),
+	tweet varchar(150),
+	favorites int
+);   -- Creating tables
+
+
+
+show tables; -- show tables in current selected database.
+
+show columns from tweets;  --showing columns from tables. Note: It doesn't show the real inserted data of the table.
+
+desc tweets; --showing columns from tables same as above. Note: It doesn't show the real inserted data of the table.
+
+
+drop table tweets; -- drop table
+
