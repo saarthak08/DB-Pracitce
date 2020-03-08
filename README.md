@@ -1,1 +1,1 @@
-# DB-Pracitce
+# DB-Practice
