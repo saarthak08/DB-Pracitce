@@ -44,3 +44,29 @@ create table if not exists cats (
 	PRIMARY KEY (cat_id)
 );  -- implementation of primary key
 
+
+
+/*
+
+Altering table columns
+
+*/
+alter table cats
+add hello VARCHAR(20);
+
+
+alter table cats
+drop column hello;
+
+alter table cats
+add hello int;
+
+alter table cats
+modify column hello varchar(20) not null default 'Hello Cat';
+
+/*
+
+Altering table columns
+
+*/
+
