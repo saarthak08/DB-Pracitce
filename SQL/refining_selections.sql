@@ -38,3 +38,5 @@ select * from books where stock_quantity like '____';  -- where stock quantity i
 
 
 select * from books where title like '\_'; --where there is underscore
+
+
