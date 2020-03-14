@@ -2,7 +2,7 @@
 
 CREATE database if not exists test;
 
-use database;
+use test;
 
 source book.sql;
 

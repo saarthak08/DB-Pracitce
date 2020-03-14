@@ -22,6 +22,7 @@ drop database test;  -- drop database naming test
 
 create database test;
 
+
 use test; -- using the database i.e. current database is selected.
 
 
@@ -39,7 +40,9 @@ create table tweets (
 
 show tables; -- show tables in current selected database.
 
+
 show columns from tweets;  --showing columns from tables. Note: It doesn't show the real inserted data of the table.
+
 
 desc tweets; --showing columns from tables same as above. Note: It doesn't show the real inserted data of the table.
 

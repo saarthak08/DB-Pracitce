@@ -1,7 +1,7 @@
 
 CREATE database if not exists test;
 
-use database;
+use test;
 
 
 select CONCAT('hello'," ", 'world'); 
