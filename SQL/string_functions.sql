@@ -42,3 +42,5 @@ select char_length(author_fname) from books;
 select upper('hello');
 
 select lower('HELLO');
+
+

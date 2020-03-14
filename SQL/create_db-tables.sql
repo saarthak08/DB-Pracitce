@@ -31,6 +31,7 @@ select database(); --return current selected database
 create table tweets (
 	username varchar(200),
 	tweet varchar(150),
+	rupees decimal(5,2), 
 	favorites int
 );   -- Creating tables
 
@@ -44,4 +45,32 @@ desc tweets; --showing columns from tables same as above. Note: It doesn't show 
 
 
 drop table tweets; -- drop table
+
+
+
+
+/*
+
+Altering table columns
+
+*/
+alter table cats
+add hello VARCHAR(20);
+
+
+alter table cats
+drop column hello;
+
+alter table cats
+add hello int;
+
+alter table cats
+modify column hello varchar(20) not null default 'Hello Cat';
+
+/*
+
+Altering table columns
+
+*/
+
 

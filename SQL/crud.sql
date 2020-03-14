@@ -16,10 +16,27 @@ create database if not exists test;
 		);
 
 
+
 	insert into cats(name, breed, age)
 		values('Cat1','abc',20),
 		('Cat2','bcd',10),
 		('Cat3','abc',30);
+
+
+
+		insert into cats (name, age)
+		VALUES('MyCat',200);  --inserting data into table.
+
+
+		insert into cats (name, age)
+			VALUES('MyCat2',300),
+		('MyCat3',400); -- inserting multiple data into table.
+
+
+		insert into cats(name)
+			VALUES ('Snowbell'); --here age will be null.
+
+	select * from cats; -- show data in the table.
 
 
 	select name from cats;  -- returns name in table cats
@@ -37,7 +54,8 @@ create database if not exists test;
 
 
 		update cats 
-			set breed='don',name='catty' where breed='hello' AND age=20;
+			set breed='don',name='catty' 
+			where breed='hello' AND age=20;
 
 
 			delete from cats where breed='don';
