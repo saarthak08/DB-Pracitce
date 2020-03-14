@@ -1,3 +1,7 @@
+create database if not exists test;
+
+use test;
+
 
 -- CREATING THE REVIEWERS TABLE
 CREATE TABLE reviewers (
