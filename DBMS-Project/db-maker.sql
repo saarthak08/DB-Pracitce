@@ -4,6 +4,8 @@ create database if not exists library_management_system;
 
 use library_management_system;
 
+source models/library.sql;
+
 source models/author.sql;
 
 source models/book.sql;
@@ -20,9 +22,10 @@ source models/issues_list.sql;
 
 source models/returns_list.sql;
 
+source triggers/book_copy_triggers.sql;
 
-alter table book_copy
-    add FOREIGN KEY(returns_list_id) REFERENCES returns_list(id);
+source triggers/issues_list_triggers.sql;
 
-alter table book_copy
-    add FOREIGN KEY(issues_list_id) REFERENCES issues_list(id);
+source triggers/returns_list_triggers.sql;
+
+source relationships/relationship_tables.sql;

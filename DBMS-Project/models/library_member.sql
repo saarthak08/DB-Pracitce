@@ -5,5 +5,7 @@ create table if not exists library_member (
     email_address varchar(100) NOT NULL UNIQUE,
     address varchar(200),
     department_id int NOT NULL, 
+    library_id int NOT NULL,
+    FOREIGN KEY (library_id) REFERENCES library(id),
     FOREIGN KEY(department_id) REFERENCES department(id)
 );

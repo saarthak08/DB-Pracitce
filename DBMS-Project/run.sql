@@ -6,28 +6,43 @@ insert into author(name) values ("Author 2");
 
 select * from author;
 
-insert into book(title,author_id,publisher,ISBN) values("Java for Dummies",1,"Wiley Publications",420);
-insert into book(title,author_id,publisher,ISBN) values("Python for Dummies",2,"Wiley Publications",123);
-insert into book(title,author_id,publisher,ISBN) values("JavaScript for Dummies",1,"Wiley Publications",100);
+insert into library(email_address,address,contact_number) values("mal@amu.ac.in","AMU CAMPUS",202001);
+select * from library;
+
+
+insert into book(title,publisher,ISBN,library_id) values("Java for Dummies","Wiley Publications",420,1);
+insert into book(title,publisher,ISBN,library_id) values("Python for Dummies","Wiley Publications",123,1);
+insert into book(title,publisher,ISBN,library_id) values("JavaScript for Dummies","Wiley Publications",100,1);
 
 select * from book;
+
+insert into author_book(author_id, book_id) values (1,2);
+insert into author_book(author_id, book_id) values (2,1);
+insert into author_book(author_id, book_id) values (1,1);
+
+
+select * from author_book
+JOIN (select name as author_name, id as author_id from author) a
+ON author_book.author_id=a.author_id
+JOIN (select title as book_title, publisher as book_publisher, id as book_id, ISBN from book) b
+ON author_book.book_id=b.book_id;
 
 insert into department(name) values("Computer");
 insert into department(name) values("Electronics");
 
 select * from department;
 
-insert into library_member(name,contact_number,email_address,address,department_id) values("Tony Stark",100,"tonystark@starkindustries.com","Malibu CA, USA",1);
-insert into library_member(name,contact_number,email_address,address,department_id) values("Steve Rogers",100,"steverogers@avengers.com","Avengers HQ, USA",1);
-insert into library_member(name,contact_number,email_address,address,department_id) values("Peter Parker",100,"peterparker@starkindustries.com","Queens",1);
-insert into library_member(name,contact_number,email_address,address,department_id) values("Thanos",100,"themadtitan@marvel.com","Titan",2);
+insert into library_member(name,contact_number,email_address,address,department_id,library_id) values("Tony Stark",100,"tonystark@starkindustries.com","Malibu CA, USA",1,1);
+insert into library_member(name,contact_number,email_address,address,department_id,library_id) values("Steve Rogers",100,"steverogers@avengers.com","Avengers HQ, USA",1,1);
+insert into library_member(name,contact_number,email_address,address,department_id,library_id) values("Peter Parker",100,"peterparker@starkindustries.com","Queens",1,1);
+insert into library_member(name,contact_number,email_address,address,department_id,library_id) values("Thanos",100,"themadtitan@marvel.com","Titan",2,1);
 
 
 select * from library_member;
 
-insert into staff(name,contact_number,email_address,address) values ("Babu Bhaiya",420,"babubhaiya@herapheri.com","Mumbai");
-insert into staff(name,contact_number,email_address,address) values ("Jethiya",420,"jethalalchampaklalgada@tmkoc.com","Goregaon, Mumbai");
-insert into staff(name,contact_number,email_address,address) values ("Bertram Gilfoyle",420,"systemarchitect@piedpiper.com","Palo Alto, CA, USA");
+insert into staff(name,contact_number,email_address,address,library_id) values ("Babu Bhaiya",420,"babubhaiya@herapheri.com","Mumbai",1);
+insert into staff(name,contact_number,email_address,address,library_id) values ("Jethiya",420,"jethalalchampaklalgada@tmkoc.com","Goregaon, Mumbai",1);
+insert into staff(name,contact_number,email_address,address,library_id) values ("Bertram Gilfoyle",420,"systemarchitect@piedpiper.com","Palo Alto, CA, USA",1);
 
 select * from staff;
 

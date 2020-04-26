@@ -3,5 +3,7 @@ create table if not exists staff (
     name varchar(100) NOT NULL,
     address varchar(200),
     email_address varchar(100) UNIQUE,
-    contact_number int NOT NULL
+    contact_number int NOT NULL,
+    library_id int NOT NULL,
+    FOREIGN KEY (library_id) REFERENCES library(id)
 );
